@@ -5,11 +5,15 @@ void error(string word1, string word2, string msg) {
 }
 
 bool edit_distance_within(const std::string& str1, const std::string& str2, int d) {
-    return abs(static_cast<int>((str1.size() - str2.size()))) == d;
+    return abs(static_cast<int>((str1.size() - str2.size()))) < d;
 }
 
 
 bool is_adjacent(const string& word1, const string& word2) {
+    if (word1 == word2) {
+        return true;
+    }
+
     int size1 = word1.size();
     int size2 = word2.size();
     int difference = 0;
@@ -104,6 +108,10 @@ void load_words(set<string> & word_list, const string& file_name) {
 }
 
 void print_word_ladder(const vector<string>& ladder) {
+    if (ladder.empty()) {
+        cout << "No word ladder found.";
+    }
+
     for(string word: ladder)
         cout << word << " ";
     cout << endl;

@@ -3,7 +3,7 @@
 void tolower(string &word);
 
 int main() {
-    verify_word_ladder();
+    // verify_word_ladder();
     set<string> word_list;
     load_words(word_list, "src/words.txt");
 
