@@ -5,7 +5,7 @@ void error(string word1, string word2, string msg) {
 }
 
 bool edit_distance_within(const std::string& str1, const std::string& str2, int d) {
-    return abs(static_cast<int>((str1.size() - str2.size()))) < d;
+    return abs(static_cast<int>((str1.size() - str2.size()))) <= d;
 }
 
 
@@ -110,10 +110,13 @@ void load_words(set<string> & word_list, const string& file_name) {
 void print_word_ladder(const vector<string>& ladder) {
     if (ladder.empty()) {
         cout << "No word ladder found.";
-    }
+    } else {
 
+    cout << "Word ladder found: ";
+    
     for(string word: ladder)
         cout << word << " ";
+    }
     cout << endl;
 }
 
