@@ -18,7 +18,7 @@ bool is_adjacent(const string& word1, const string& word2) {
     int size2 = word2.size();
     int difference = 0;
 
-    if (edit_distance_within(word1, word2, 0)) {
+    if (edit_distance_within(word1, word2, 1)) {
         for (int i = 0; i < size1; i++) {
             if (word1[i] != word2[i]) {
                 difference += 1;
@@ -27,7 +27,7 @@ bool is_adjacent(const string& word1, const string& word2) {
         }
         return difference == 1;
 
-    } else if (edit_distance_within(word1, word2, 1)) {
+    } else if (edit_distance_within(word1, word2, 2)) {
         int i = 0, j = 0;
         while (i < size1 && j < size2) {
             if (word1[i] != word2[j]) {
