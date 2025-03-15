@@ -52,7 +52,7 @@ void print_path(const vector<int>& v, int total) {
         cout << "No path found!" << endl;
         return;
     }
-    cout << "Shortest path (cost " << total << "): ";
+    
     for (int node : v) {
         cout << node << " ";
     }
